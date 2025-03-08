@@ -193,6 +193,19 @@ router.post("/cart/remove/:id", (req, res) => {
     res.redirect("/product/cart");
 });
 
+//profile route
+router.get("/profile", (req,res)=>{
+    res.render("Items/profile.ejs");
+});
+
+// Handle invalid subroutes 
+router.get("/profile/*", (req, res) => {
+    req.flash("error", "Invalid url");
+    res.redirect("/profile"); 
+});
+
+
+
 // view all product route
 router.get("/:name",validateCategory,async (req, res) => {
   

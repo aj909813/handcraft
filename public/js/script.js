@@ -34,16 +34,5 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-  const path = window.location.pathname;
-  if (path.includes("/product")) {
-      document.getElementById("nav-home").classList.add("active");
-  } else if (path.includes("/profile")) {
-      document.getElementById("nav-profile").classList.add("active");
-  } else if (path.includes("/call")) {
-      document.getElementById("nav-call").classList.add("active");
-  } else if (path.includes("/cart")) {
-      document.getElementById("nav-cart").classList.add("active");
-  }
-});
+
 

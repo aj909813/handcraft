@@ -404,7 +404,7 @@ a{
         font-size: 18px; /* Reduced icon size */
         margin-bottom: 2px;
     }
-    .bottom-nav-item.active {
+    .bottom-nav-item.active{
         color: #007bff !important; /* Highlight active page */
     }
 

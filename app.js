@@ -59,6 +59,9 @@ app.use((req,res,next)=>{
     next();
 });
 
+// if(!mongoose.Types.ObjectId.isValid(id)){
+//     return res.status(400).send("Invalid ID formte");
+// }
 
 main().then((res) => {
     console.log("connected to DB");
@@ -80,20 +83,6 @@ app.get("/*", (req, res) => {
     req.flash("error", "Invalid url");
     res.redirect("/product"); 
 });
-
-//profile route
-app.get("/profile", (req,res)=>{
-    res.render("Items/profile.ejs");
-});
-
-// Handle invalid subroutes 
-app.get("/profile/*", (req, res) => {
-    req.flash("error", "Invalid url");
-    res.redirect("/profile"); 
-});
-
-
-
 
 
 
