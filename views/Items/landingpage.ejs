@@ -1,0 +1,292 @@
+<% layout("/layout/boilerplate") %>
+
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"> <img src="/assets/shiv.jpg"alt="shiv"></div>
+    <div class="swiper-slide"><img src="/assets/bajyot1.jpg" alt="Image 2"></div>
+    <div class="swiper-slide"><img src="/assets/poojathali.jpg" alt="Image 3"></div>
+  </div>
+  <!-- Pagination (Dots) -->
+  <div class="swiper-pagination"></div>
+  <!-- Navigation Arrows -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<br>
+<div class="firstpage">
+<!-- murti -->
+<h2>Murti/Statue <h6><a href="/product/murti" class="view-all">Vew all</a></h6></h2> 
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+ <% for (let Murti of allMurti) { %>
+  
+    <div class="card">
+
+        <% if (Murti.image && Murti.image.length > 0) { %>
+          <img src="/<%= Murti.image[0] %>" alt="Murti Image">
+          <% } else { %>
+          <img src="/default.jpg" alt="Default Image" >
+        <% } %>
+     
+        <div class="container">
+         <h4><b><%= Murti.name%></b></h4> 
+         <p><%= Murti.description%></p> 
+         <a  class="view-all"href="/product/murti/<%=Murti._id%>">More</a><br>
+      </div>
+      <br>
+    </div>
+   
+  <% } %>
+  
+</div>
+
+<br>
+
+<!-- Jula -->
+<h2>Jula <h6><a href="/product/jula" class="view-all">Vew all</a></h6></h2> 
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+ <% for (let Jula of allJula) { %>
+  
+    <div class="card">
+    
+        <% if (Jula.image && Jula.image.length > 0) { %>
+          <img src="/<%= Jula.image[0] %>" alt="Murti Image">
+          <% } else { %>
+          <img src="/default.jpg" alt="Default Image" >
+        <% } %>
+     
+        <div class="container">
+         <h4><b><%= Jula.name%></b></h4> 
+         <p><%= Jula.description%></p> 
+         <a  class="view-all"href="/product/jula/<%=Jula._id%>">More</a><br>
+      </div>
+      <br>
+    </div>
+   
+  <% } %>
+  
+</div>
+
+<br>
+
+<!-- Poojathali -->
+<h2>Pooja Thali <h6><a href="/product/poojathali" class="view-all">Vew all</a></h6></h2> 
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+ <% for (let Poojathali of allPoojathali) { %>
+  
+    <div class="card">
+  
+        <% if (Poojathali.image && Poojathali.image.length > 0) { %>
+          <img src="/<%= Poojathali.image[0] %>" alt="Poojathali Image">
+          <% } else { %>
+          <img src="/default.jpg" alt="Default Image" >
+        <% } %>
+     
+        <div class="container">
+         <h4><b><%= Poojathali.name%></b></h4> 
+         <p><%= Poojathali.description%></p> 
+         <a  class="view-all"href="/product/poojathali/<%=Poojathali._id%>">More</a><br>
+      </div>
+      <br>
+    </div>
+   
+  <% } %>
+  
+</div>
+
+<br>
+
+<br>
+
+
+       <a  class="btn btn-outline-primary view-all"href="/product/all">viewall Product categry</a>
+    
+  </div><br>
+
+</div>
+
+<% layout("/layout/boilerplate") %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="main">
+    <h2>ALL product</h2>
+    murti 
+   
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 ">
+        <h3>Murtis</h3>
+        <% for (let Murti of allMurti) { %>
+          <div class="card" style="width:18rem;">
+            <a href="/product/murti/<%=Murti._id%>">
+
+              <% if (Murti.image && Murti.image.length > 0) { %>
+                <img src="/<%= Murti.image[0] %>" alt="Murti Image" width="200">
+            <% } else { %>
+                <img src="/default.jpg" alt="Default Image" width="200">
+            <% } %>
+
+            
+            <div class="card-img-overlay"></div>
+            <div class="card-body">
+              <h5 class="card-title"><b> <%= Murti.name%> </b></h5>
+              <p class="card-text"><%= Murti.description%></p>
+            </div>
+            <a>
+          </div>
+        <% } %>
+        <div class="view-all-container">
+          <a href="/product/murti" class="view-all">Vew all</a>
+         </div>
+       
+      </div>
+      
+
+      jula 
+     
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        <h3>Jula</h3>
+        <% for (let Jula of allJula) { %>
+            <div class="card" style="width: 18rem;">
+              <a href="/product/jula/<%=Jula._id%>">
+              <img src="<%= Jula.image %>" class="card-img-top" alt="Item image" style="height: 10rem;">
+              <div class="card-img-overlay"></div>
+              <div class="card-body">
+                <h5 class="card-title"><b> <%= Jula.name%> </b></h5>
+                <p class="card-text"><%= Jula.description%></p>
+              </div>
+            </div>
+            <a>
+          <% } %>
+          <a href="/product/jula" class="smart">Vew all</a>
+      </div>
+
+        poojathali 
+       <h3>Pooja Thali</h3>
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+       
+        <% for (let Poojathali of allPoojathali) { %>
+            <div class="card" style="width: 18rem;">
+              <a href="/product/poojathali/<%=Poojathali._id%>">
+              <img src="<%= Poojathali.image %>" class="card-img-top" alt="Item image" style="height: 10rem;">
+              <div class="card-img-overlay"></div>
+              <div class="card-body">
+                <h5 class="card-title"><b> <%= Poojathali.name%> </b></h5>
+                <p class="card-text"><%= Poojathali.description%></p>
+               
+                
+              </div>
+              </a>
+            </div>
+          <% } %>
+          <a href="/product/poojathali" class="smart">Vew all</a>
+      </div>
+
+           dandiya 
+          <h3>Dandiya</h3>
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        
+        <% for (let Dandiya of allDandiya) { %>
+            <div class="card" style="width: 18rem;">
+              <a href="/product/dandiya/<%=Dandiya._id%>">
+              <img src="<%= Dandiya.image %>" class="card-img-top" alt="Item image" style="height: 10rem;">
+              <div class="card-img-overlay"></div>
+              <div class="card-body">
+                <h5 class="card-title"><b> <%= Dandiya.name%> </b></h5>
+                <p class="card-text"><%= Dandiya.description%></p>
+               
+               
+              </div>
+              </a>
+            </div>
+          <% } %>
+          <a href="/product/dandiya" class="smart">Vew all</a>
+      </div>
+
+        bajyot 
+        <h3>Bajyot</h3>
+      <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+        
+        <% for (let Bajyot of allBajyot) { %>
+            <div class="card items" style="width: 18rem;">
+              <a href="/product/bajyot/<%=Bajyot._id%>">
+              <img src="<%= Bajyot.image %>" class="card-img-top" alt="Item image" style="height: 10rem;">
+              <div class="card-img-overlay"></div>
+              <div class="card-body">
+                <h5 class="card-title"><b> <%= Bajyot.name%> </b></h5>
+                <p class="card-text"><%= Bajyot.description%></p>
+                
+              </div>
+              </a>
+            </div>
+          <% } %>
+          <a href="/product/bajyot" class="smart">Vew all</a>
+      </div>
+     
+</div> -->

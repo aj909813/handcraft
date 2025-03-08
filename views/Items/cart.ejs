@@ -1,0 +1,30 @@
+<% layout("/layout/boilerplate") %>
+
+<h2>Your Shopping Cart</h2>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <% cart.items.forEach(item => { %>
+    <div class="card">
+        <% if (cart.items.length === 0) { %>
+            <p>Your cart is empty.</p>
+        <% } else { %>
+            
+                <div class="cart-item">
+                    <img src="<%= item.image %>" alt="<%= item.name %> Image"style="width:300px">
+                    <div class="container">
+                        <h4><b><%= item.name %></b></h4>
+                        <p><%= item.description %></p> 
+                        <form action="/product/cart/remove/<%= item.productId %>" method="POST" style="display:inline;">
+                            <button type="submit"  class="view-all" style="border:none ;">Remove</button>
+                        </form>
+                    </div><br>
+                </div>
+            
+        <% } %>
+    </div>
+    <% }) %>
+</div><br>
+
+
+
+

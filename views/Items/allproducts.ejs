@@ -1,0 +1,147 @@
+<% layout("/layout/boilerplate") %>
+
+<div class="firstpage">
+<!-- murti -->
+<h2>Murti/Statue <h6><a href="/product/murti" class="view-all">Vew all</a></h6></h2> 
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+ <% for (let Murti of allMurti) { %>
+    
+    <div class="card">
+   
+        <% if (Murti.image && Murti.image.length > 0) { %>
+          <img src="/<%= Murti.image[0] %>" alt="Murti Image">
+          <% } else { %>
+          <img src="/default.jpg" alt="Default Image" >
+        <% } %>
+     
+        <div class="container">
+         <h4><b><%= Murti.name%></b></h4> 
+         <a  class="view-all"href="/product/murti/<%=Murti._id%>">More</a><br>
+      </div>
+      <br>
+    </div>
+  <% } %>
+  
+</div>
+
+<br>
+
+<!-- Jula -->
+<h2>Jula <h6><a href="/product/jula" class="view-all">Vew all</a></h6></h2> 
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+ <% for (let Jula of allJula) { %>
+  
+    <div class="card">
+    
+        <% if (Jula.image && Jula.image.length > 0) { %>
+          <img src="/<%= Jula.image[0] %>" alt="Murti Image">
+          <% } else { %>
+          <img src="/default.jpg" alt="Default Image" >
+        <% } %>
+     
+        <div class="container">
+         <h4><b><%= Jula.name%></b></h4>  
+         <a  class="view-all"href="/product/jula/<%=Jula._id%>">More</a><br>
+      </div>
+      <br>
+    </div>
+   
+  <% } %>
+  
+</div>
+
+<br>
+
+<!-- Poojathali -->
+<h2>Pooja Thali <h6><a href="/product/poojathali" class="view-all">Vew all</a></h6></h2> 
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+ <% for (let Poojathali of allPoojathali) { %>
+  
+    <div class="card">
+  
+        <% if (Poojathali.image && Poojathali.image.length > 0) { %>
+          <img src="/<%= Poojathali.image[0] %>" alt="Poojathali Image">
+          <% } else { %>
+          <img src="/default.jpg" alt="Default Image" >
+        <% } %>
+     
+        <div class="container">
+         <h4><b><%= Poojathali.name%></b></h4> 
+         <a  class="view-all"href="/product/poojathali/<%=Poojathali._id%>">More</a><br>
+      </div>
+      <br>
+    </div>
+   
+  <% } %>
+  
+</div>
+
+<br>
+
+<!-- Dandiya -->
+
+<h2>Dandiya <h6><a href="/product/dandiya" class="view-all">Vew all</a></h6></h2> 
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+ <% for (let Dandiya of allDandiya) { %>
+  
+    <div class="card">
+     
+
+        <% if (Dandiya.image && Dandiya.image.length > 0) { %>
+          <img src="/<%= Dandiya.image[0] %>" alt="Dandiya Image">
+          <% } else { %>
+          <img src="/default.jpg" alt="Default Image" >
+        <% } %>
+     
+        <div class="container">
+         <h4><b><%= Dandiya.name%></b></h4> 
+         <a  class="view-all"href="/product/dandiya/<%=Dandiya._id%>">More</a><br>
+      </div>
+      <br>
+    </div>
+   
+  <% } %>
+  
+</div>
+
+<br>
+
+<!-- Bajyot -->
+<h2>Bajyot <h6><a href="/product/bajyot" class="view-all">Vew all</a></h6></h2> 
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+ 
+ <% for (let Bajyot of allBajyot) { %>
+  
+    <div class="card">
+     
+
+        <% if (Bajyot.image && Bajyot.image.length > 0) { %>
+          <img src="/<%= Bajyot.image[0] %>" alt="Bajyot Image">
+          <% } else { %>
+          <img src="/default.jpg" alt="Default Image" >
+        <% } %>
+     
+        <div class="container">
+         <h4><b><%= Bajyot.name%></b></h4> 
+         <a  class="view-all"href="/product/bajyot/<%=Bajyot._id%>">More</a><br>
+      </div>
+      <br>
+    </div>
+   
+  <% } %>
+  
+</div>
+
+<br>
+</div>
+
+<% layout("/layout/boilerplate") %>

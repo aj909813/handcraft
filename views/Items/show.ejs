@@ -1,0 +1,37 @@
+<% layout("/layout/boilerplate") %>
+
+
+
+
+
+    <div class="width  showroute">
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <%product.image.forEach(image=>{%>
+                
+                    <div class="swiper-slide showrouteimg"> <img src="/<%=image%>"alt="shiv"></div>
+
+                <%})%>
+            </div>
+            <!-- Pagination (Dots) -->
+            <div class="swiper-pagination"></div>
+            <!-- Navigation Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+         <div class="containers">
+            <h4>product Detalis:</h4>
+                <li><%=product.name%></li>
+                <li><%=product.description %></li>
+                <li><%=product.material %></li>
+                <li><%=product.shape %></li>
+                <li><%=product.size %></li>
+                <form action="/product/cart/add/<%= product.type %>/<%= product._id %>" method="POST" >
+                    <button type="submit" class="view-all" style="border:none ;">Add to Cart</button>
+                </form>
+                
+                
+         </div>
+        
+   </div> <br>

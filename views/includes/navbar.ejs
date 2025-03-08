@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/product"><i class="fa-solid fa-hands"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/product">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile">Profile</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              products
+            </a>
+            <ul class="dropdown-menu statueFilter">
+              <li><a class="dropdown-item" href="/product/murti">Murti</a></li>
+              <li><a class="dropdown-item" href="/product/jula">Jula</a></li>
+              <li><a class="dropdown-item" href="/product/Poojathali">Pooja thali</a></li>
+              <li><a class="dropdown-item" href="/product/dandiya">dandiya</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/product/call" >Call Us</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/product/cart" class="nav-link"><i class="fas fa-shopping-cart" ></i></a>
+          </li>
+
+        </ul>
+        
+        <form class="d-flex" role="search" action="/product/search" method="get" >
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q" required>
+          <button class="btn btn-outline-primary" type="submit" style=color:aliceblue>Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <br>

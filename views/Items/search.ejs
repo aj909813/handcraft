@@ -1,0 +1,33 @@
+<% layout("/layout/boilerplate") %>
+    <h2>Searched Result : </h2>
+    <% if(allItems.length > 0) {%>
+
+   
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+          <% allItems.forEach(item =>{%>
+          <div class="card" style="width: 18rem;">
+           <a href="/product/<%= item.type %>/<%= item._id%>" class="item-links"> 
+          
+            <% if (item.image && item.image.length > 0) { %>
+            <img src="/<%= item.image[0] %>" alt="item Image" width="200">
+           <% } else { %>
+            <img src="/default.jpg" alt="Default Image" width="200">
+          <% } %>
+
+
+            <div class="card-img-overlay"></div>
+            <div class="card-body">
+              <h5 class="card-title"><b> <%= item.name%> </b></h5>
+              <p class="card-text"><%= item.description%></p>
+             </a>
+              
+            </div>
+          
+          </div>
+          <%})%>
+          <%} else{  %>
+            <p>No results found for your search.</p>
+        <%}%>
+    </div>
+  
+   
