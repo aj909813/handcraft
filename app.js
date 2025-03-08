@@ -70,9 +70,16 @@ async function main() {
     await mongoose.connect(dburl);
 }
 
-
 app.use("/product",product);
 
+app.get("/",(req,res) => {
+    res.redirect("/product");
+});
+
+app.get("/*", (req, res) => {
+    req.flash("error", "Invalid url");
+    res.redirect("/product"); 
+});
 
 //profile route
 app.get("/profile", (req,res)=>{
@@ -86,14 +93,8 @@ app.get("/profile/*", (req, res) => {
 });
 
 
-// middleware or (extra)
-app.use((req, res, next) => {
-    if (req.path.startsWith("/profile") && req.path !== "/profile") {
-        req.flash("error", "Invalid profile Url");
-        return res.redirect("/profile");
-    }
-    next();
-});
+
+
 
 
 // app.use((req, res, next) => {

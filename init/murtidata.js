@@ -28,7 +28,7 @@
         {
             name: "Radha Krishna Murti",
             description: "Radha Krishna idol representing love",
-            image: ["../assets/Krishna.jpg"],
+            image: ["../assets/krishna.jpg"],
             material: "silver",
             shape: "Dancing",
             color: "Multicolor",

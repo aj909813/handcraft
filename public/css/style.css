@@ -405,7 +405,7 @@ a{
         margin-bottom: 2px;
     }
     .bottom-nav-item.active {
-        color: green !important; /* Highlight active page */
+        color: #007bff !important; /* Highlight active page */
     }
 
     .bottom-navbar {
