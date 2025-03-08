@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const port = process.envPORT || 8080;
+const port = process.env.PORT || 8080;
 
 const path = require("path");
 const engine = require("ejs-mate");
