@@ -13,15 +13,29 @@ const product = require("./routes/product.js");
 
 
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 app.engine("ejs",engine);
 app.use(express.static(path.join(__dirname,"/public")));
 
 require("dotenv").config();
 
+ const dburl = process.env.MONGO_URL;
 
+ const store = MongoStore.create({
+    mongoUrl:dburl,
+    crypto:{
+        secret:process.env.SESSION_SECERT
+    },
+    touchAfter: 24*3600,
+});
+
+store.on("error",()=>{
+    console.log("ERROR in MONGO SESSION STORE",err);
+});
 
 const sessionOptions = {
+    store,
     secret:process.env.SESSION_SECERT,
     resave:false,
     saveUninitialized: true,
@@ -32,7 +46,10 @@ const sessionOptions = {
     },
 };
 
+
+
 app.use(session(sessionOptions));
+
 app.use(flash());
 
 app.use((req,res,next)=>{
@@ -50,7 +67,7 @@ main().then((res) => {
 });
 
 async function main() {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(dburl);
 }
 
 

@@ -11,7 +11,7 @@ const Dandiya = require("../models/dandiya.js");
 const Bajyot = require("../models/bajyot.js");
 const Poojathali = require("../models/poojathali.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/Handcraft-products";
+const dburl = "mongodb+srv://aj909813:O12RpateTqPa9Uqx@cluster0.egipv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 main().then((res)=>{
     console.log("connected to DB");
@@ -20,7 +20,7 @@ main().then((res)=>{
 });
 
 async function main(){
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(dburl);
 }
 
 const initDB = async() => {
