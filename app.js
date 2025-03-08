@@ -19,7 +19,6 @@ app.use(express.static(path.join(__dirname,"/public")));
 
 require("dotenv").config();
 
- const MONGO_URL = "mongodb://127.0.0.1:27017/Handcraft-products";
 
 
 const sessionOptions = {
@@ -51,7 +50,7 @@ main().then((res) => {
 });
 
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URL);
 }
 
 
