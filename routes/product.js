@@ -49,14 +49,14 @@ router.get("/search", async (req, res) => {
       console.log("Search Query:", query);
       console.log("Search Results:", allItems);
   
-      res.render("items/search.ejs", { allItems, query });
+      res.render("Items/search.ejs", { allItems, query });
     } catch (err) {
       console.log("Search Error:", err);
       res.status(500).send("Server Error");
     }
   });
   
-
+// call route 
   router.get("/call", (req, res) => {
     res.redirect('tel:+919828677190');
        });
@@ -101,6 +101,7 @@ router.post("/submit-form",async (req, res) => {
 router.get("/:type/:id", validateProduct,async (req, res) => {
     res.render("Items/show.ejs", { product: req.product });
 });
+
 
 // viewall second
 router.get("/all", async (req, res) => {
@@ -189,7 +190,7 @@ router.post("/cart/remove/:id", (req, res) => {
 
     cart.items = cart.items.filter(item => item.productId.toString() !== id);
 
-    req.flash("success", "Item removed from cart");
+    req.flash("error", "Item removed from cart");
     res.redirect("/product/cart");
 });
 
