@@ -49,7 +49,7 @@ router.get("/search", async (req, res) => {
       console.log("Search Query:", query);
       console.log("Search Results:", allItems);
   
-      res.render("items/search", { allItems, query });
+      res.render("items/search.ejs", { allItems, query });
     } catch (err) {
       console.log("Search Error:", err);
       res.status(500).send("Server Error");
@@ -197,13 +197,6 @@ router.post("/cart/remove/:id", (req, res) => {
 router.get("/profile", (req,res)=>{
     res.render("Items/profile.ejs");
 });
-
-// Handle invalid subroutes 
-router.get("/profile/*", (req, res) => {
-    req.flash("error", "Invalid url");
-    res.redirect("/profile"); 
-});
-
 
 
 // view all product route
