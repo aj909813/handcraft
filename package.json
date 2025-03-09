@@ -29,6 +29,9 @@
      "dependencies": {
   
        
+     "bootstrap-icons": "^1.11.3",
+  
+       
      "connect-flash": "^0.1.1",
   
        

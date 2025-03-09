@@ -75,9 +75,9 @@ app.use("/product",product);
 app.get("/",(req,res) => {
     res.redirect("/product");
 });
-
-
-
+app.get("*/",(req,res)=>{
+  res.redirect("/product");
+});
 
 
 app.use((req, res, next) => {

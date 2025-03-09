@@ -18,7 +18,7 @@ var swiper = new Swiper(".mySwiper", {
   
 
 
-
+//upper navbar active links
   document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll(".nav-item a");
     const currentPath = window.location.pathname;
@@ -34,7 +34,7 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
-
+//small screen search function
 document.getElementById("searchIcon").addEventListener("click", function() {
   let searchContainer = document.getElementById("searchContainer");
   searchContainer.classList.remove("d-none");
@@ -60,6 +60,57 @@ document.querySelector("#searchContainer input").addEventListener("keypress", fu
       document.getElementById("searchForm").submit(); // Manually submit
   }
 });
+
+
+
+// read more button
+    function toggleText() {
+        var shortText = document.getElementById("shortText");
+        var fullText = document.getElementById("fullText");
+        var btn = document.getElementById("readMoreBtn");
+
+        if (fullText.style.display === "none") {
+            fullText.style.display = "block";
+            shortText.style.display = "none";
+            btn.innerText = "Read Less";
+        } else {
+            fullText.style.display = "none";
+            shortText.style.display = "block";
+            btn.innerText = "Read More";
+        }
+    }
+
+// footer upper scroller bar
+
+document.addEventListener("DOMContentLoaded", function () {
+  let scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  // Scroll Event - Show/Hide Button
+  window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+          scrollTopBtn.classList.add("show");
+      } else {
+          scrollTopBtn.classList.remove("show");
+      }
+  });
+
+  // Smooth Scroll Function
+  function smoothScrollToTop() {
+      let currentPosition = window.scrollY;
+      if (currentPosition > 0) {
+          window.scrollTo(0, currentPosition - currentPosition / 10);
+          requestAnimationFrame(smoothScrollToTop);
+      }
+  }
+
+  // Click Event - Start Smooth Scroll
+  scrollTopBtn.addEventListener("click", function () {
+      requestAnimationFrame(smoothScrollToTop);
+  });
+});
+
+
+
 
 
 

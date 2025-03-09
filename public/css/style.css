@@ -277,51 +277,6 @@ h2 {
 
 /* addresspge end */
 
-/* footer */
-.f-info{
-    color: #fff;
-}
-.f-info-links a{
-    text-decoration: none;
-    color: white !important;;
-}
-
-.f-info-links a:hover{
-    text-decoration: underline;
-}
-
-.f-info-links,
-.f-info-social,
-.f-info-brand{
-    width:100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.f-info-social i{
-    color:white;
-    margin-right:1rem;
-    font-size: 1.2rem;
-}
-
-.f-info{
-    background-color: rgb(108, 121, 116);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: space-evenly;
-    text-align: center;
-}
-
-.f-info .links a{
-    color: white !important;
-}
-.f-info .links a:hover{
-    text-decoration:  underline !important;
-    text-decoration:white;
-}
-
 
 a{
     text-decoration: none !important;
@@ -392,12 +347,13 @@ a{
         justify-content: space-around;
         padding: 5px 0; /* Reduced height */
         box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
 
 
       .bottom-nav-item {
         text-align: center;
-        color: white;
+        color: 	#333333!important;
         text-decoration: none;
         font-size: 12px; /* Smaller font size */
     }
@@ -489,7 +445,7 @@ a{
         width: 100%!important;  /* Full width on mobile */
         padding: 10px!important;
     }
-
+    
     .swiper {
         width: 100% !important;
         
@@ -558,6 +514,7 @@ a{
     }
 }
 
+
 /* @media screen and (max-width: 768px){
 
      
@@ -572,15 +529,13 @@ a{
 
 
 
-/* small screen search icon */
+/* small screen search button  */
 
-/* Smaller Hamburger Icon */
 .custom-toggler {
     font-size: 0.8rem;
     padding: 5px 8px;
 }
 
-/* Hide Search by Default */
 #searchContainer {
     display: none;
     align-items: center;
@@ -593,12 +548,10 @@ a{
     background: rgba(255, 255, 255, 0.9);
 }
 
-/* Close Button Styling */
 #closeSearch {
     font-size: 1.2rem;
 }
 
-/* Change search button color to white */
 #searchForm button {
     background-color: white !important;
     color: black !important; /* Text color */
@@ -611,5 +564,130 @@ a{
 }
 #searchIcon i {
     color: white !important;
+}
+
+
+
+
+/*profile css */
+
+.content {
+    margin: auto;
+    text-align: justify;
+}
+
+button {
+    text-decoration: underline;
+    color: green;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.profile{
+    color:#89cff0;
+}
+.profileimg{
+   display: block;
+   margin: 0 auto;
+}
+
+
+/* footer*/
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white ;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links a {
+    color: white !important;
+    text-decoration: none;
+    margin: 8px 0;
+    display: block;
+    font-size: 18px;
+}
+
+.footer-links a:hover {
+    color: #00aaff;
+}
+
+.footer-divider {
+    width: 80%;
+    border: 0.5px solid #555;
+    margin: 10px 0;
+}
+
+.footer-social {
+    margin: 10px 0;
+}
+
+.footer-social i {
+    font-size: 24px;
+    margin: 0 10px;
+    color: white;
+}
+
+.footer-social i:hover {
+    color: #ffaa00;
+}
+
+.footer-copy {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-top: 10px;
+}
+
+/* Scroll to Top Button */
+
+
+/* Scroll to Top Button (Footer के अंदर Fix) */
+#scrollTopBtn {
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ffaa00;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    z-index: 1000;
+}
+
+#scrollTopBtn.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+    background-color: #ff7700;
+}
+
+body{
+    background-color: 	#F8F9FA!important;
 }
 
