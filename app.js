@@ -59,9 +59,6 @@ app.use((req,res,next)=>{
     next();
 });
 
-// if(!mongoose.Types.ObjectId.isValid(id)){
-//     return res.status(400).send("Invalid ID formte");
-// }
 
 main().then((res) => {
     console.log("connected to DB");
@@ -79,27 +76,20 @@ app.get("/",(req,res) => {
     res.redirect("/product");
 });
 
-app.get("/*", (req, res) => {
-    req.flash("error", "Invalid url");
-    res.redirect("/product"); 
-});
 
 
 
-// app.use((req, res, next) => {
-//     if (req.path.startsWith("/product") && req.path !== "/product") {
-//         req.flash("error", "Invalid url");
-//         return res.redirect("/product");
-//     }
-//     next();
-// });
 
-
-
-// 404 Middleware - Handle Invalid Routes
 app.use((req, res, next) => {
-    res.status(404).send("404 - Page Not Found");
+    if (req.path.startsWith("/product") && req.path !== "/product") {
+        req.flash("error", "404 Page not found");
+        return res.redirect("/product");
+    }
+    next();
 });
+
+
+
 
 
 app.listen(8080,()=>{

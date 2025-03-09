@@ -1,44 +1,55 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/product"><i class="fa-solid fa-hands"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+  <div class="container-fluid">
+      <!-- Left Side: Hamburger & Logo -->
+      <button class="navbar-toggler custom-toggler order-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/product">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/product/profile">Profile</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              products
-            </a>
-            <ul class="dropdown-menu statueFilter">
-              <li><a class="dropdown-item" href="/product/murti">Murti</a></li>
-              <li><a class="dropdown-item" href="/product/jula">Jula</a></li>
-              <li><a class="dropdown-item" href="/product/Poojathali">Pooja thali</a></li>
-              <li><a class="dropdown-item" href="/product/dandiya">dandiya</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/product/call" >Call Us</a>
-          </li>
+      <a class="navbar-brand ms-2 border-0" href="/product">
+          <i class="fa-solid fa-hands"></i>
+      </a>
 
-          <li class="nav-item">
-            <a href="/product/cart" class="nav-link"><i class="fas fa-shopping-cart" ></i></a>
-          </li>
+      <!-- Search Icon (For Mobile) -->
+      <button class="btn border-0 d-lg-none ms-auto" id="searchIcon">
+          <i class="fas fa-search"></i>
+      </button>
 
-        </ul>
-        
-        <form class="d-flex" role="search" action="/product/search" method="get" >
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q" required>
-          <button class="btn btn-outline-primary" type="submit" style=color:aliceblue>Search</button>
-        </form>
+      <!-- Search Bar (Mobile) -->
+      <div id="searchContainer" class="d-none position-absolute top-0 start-0 w-100 h-100 bg-white p-3">
+          <form class="d-flex w-100" id="searchForm" action="/product/search" method="get">
+              <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" name="q" required>
+              <button class="btn btn-outline-danger" type="button" id="closeSearch">
+                  <i class="fas fa-times"></i>
+              </button>
+          </form>
       </div>
-    </div>
-  </nav>
 
-  <br>
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"><a class="nav-link active" href="/product">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/product/profile">Profile</a></li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown">Products</a>
+                  <ul class="dropdown-menu statueFilter">
+                      <li><a class="dropdown-item" href="/product/murti">Murti</a></li>
+                      <li><a class="dropdown-item" href="/product/jula">Jula</a></li>
+                      <li><a class="dropdown-item" href="/product/Poojathali">Pooja Thali</a></li>
+                      <li><a class="dropdown-item" href="/product/dandiya">Dandiya</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="/product/call">Call Us</a></li>
+              <li class="nav-item">
+                  <a href="/product/cart" class="nav-link"><i class="fas fa-shopping-cart"></i></a>
+              </li>
+          </ul>
+
+          <!-- Search Bar for Large Screens -->
+          <form class="d-flex d-none d-lg-block" role="search" action="/product/search" method="get">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q" required>
+              <!-- <button class="btn btn-outline-primary" type="submit">Search</button> -->
+          </form>
+      </div>
+  </div>
+</nav>
+<br>

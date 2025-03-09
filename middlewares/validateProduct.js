@@ -1,3 +1,8 @@
+
+
+
+
+
 const Murti = require("../models/murti");
 const Jula = require("../models/jula");
 const Dandiya = require("../models/dandiya");
@@ -19,7 +24,7 @@ const validateProduct = async (req, res, next) => {
 
     // Check if type exists in validTypes
     if (!validTypes[type]) {
-        req.flash("error", "Invalid Url");
+        req.flash("error", "Page not found");
         return res.redirect("/product"); // Redirect if category is invalid
     }
 

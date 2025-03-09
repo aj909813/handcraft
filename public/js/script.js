@@ -35,4 +35,36 @@ var swiper = new Swiper(".mySwiper", {
 
 
 
+document.getElementById("searchIcon").addEventListener("click", function() {
+  let searchContainer = document.getElementById("searchContainer");
+  searchContainer.classList.remove("d-none");
+  searchContainer.style.display = "flex";
+  document.querySelector("#searchContainer input").focus(); // Auto focus input
+});
+
+document.getElementById("closeSearch").addEventListener("click", function() {
+  let searchContainer = document.getElementById("searchContainer");
+  searchContainer.style.display = "none";
+});
+
+// Form submit event to hide search bar after submission
+document.getElementById("searchForm").addEventListener("submit", function() {
+  let searchContainer = document.getElementById("searchContainer");
+  searchContainer.style.display = "none";
+});
+
+// Enter key press should trigger form submission
+document.querySelector("#searchContainer input").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+      event.preventDefault(); // Stop default action
+      document.getElementById("searchForm").submit(); // Manually submit
+  }
+});
+
+
+
+
+
+
+
 

@@ -2,6 +2,7 @@
 <div class="bottom-navbar">
     <a href="/product"class="bottom-nav-item" id="nav-home" ><i class="fas fa-home"></i>Home</a>
     <a href="/product/profile"class="bottom-nav-item"  id="nav-profile"><i class="fas fa-user" ></i>Profile</a>
+    <a href="/product/all"class="bottom-nav-item" id="nav-all"><i class="fa-solid fa-border-all"></i>Products</a>
     <a href="/product/call"class="bottom-nav-item"  id="nav-call"><i class="fas fa-phone" ></i>Call</a>
     <a href="/product/cart"class="bottom-nav-item" id="nav-cart"><i class="fas fa-shopping-cart"  ></i>Cart</a>
   </div>
@@ -12,13 +13,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (path.includes("/product/profile")) {
         document.getElementById("nav-profile").classList.add("active");
-    } else if (path.includes("/product/call")) {
+    } else if (path.includes("/product/all")) {
+        document.getElementById("nav-all").classList.add("active");}
+    else if (path.includes("/product/call")) {
         document.getElementById("nav-call").classList.add("active");
     } else if (path.includes("/product/cart")) {
         document.getElementById("nav-cart").classList.add("active");
     } else if (path.includes("/product")) {
         document.getElementById("nav-home").classList.add("active");
-    }
+    } 
 });
 
 </script>

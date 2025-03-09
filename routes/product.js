@@ -67,12 +67,14 @@ router.get("/search", async (req, res) => {
 router.post("/submit-form",async (req, res) => {
     const { fullname, phone, requirement } = req.body;
 
+
+
     // Nodemailer setup
     const transporter = nodemailer.createTransport({
-
+        
         service: "gmail",
         secure:true,
-        port:465,
+        port:587,
         auth: {
             user:  "handcrafte04@gmail.com", // Your email
             pass: "vpyhwmynmtyfttdj"// Your email router password

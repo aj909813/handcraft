@@ -21,35 +21,6 @@
        </div>
        <% }); %> 
    </div>
+
+
   
-
-    
-
-
-
-
-
-  <!-- <% allProducts.forEach(product => { %> 
-
-    <div class="row row-cols-lg-2 row-cols-md-2 row-cols-sm-1 ">
-  <div class="card" style="width: 18rem;">
-    <a href="/product/<%=product.type%>/<%=product._id%>">
-   
-      <% if (product.image && product.image.length > 0) { %>
-        <img src="/<%= product.image[0] %>" alt="Murti Image" width="200">
-    <% } else { %>
-        <img src="/default.jpg" alt="Default Image" width="200">
-    <% } %>
-
-
-    <div class="card-img-overlay"></div>
-    <div class="card-body">
-      <h5 class="card-title"><b> <%= product.name%> </b></h5>
-      <p class="card-text"><%= product.description%></p>
-    </div> 
-  </a>
-  </div>
-</div>
-  <% }); %>  -->
-
-  <a href="/product">Back to Home</a>

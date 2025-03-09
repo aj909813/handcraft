@@ -146,12 +146,15 @@ html {
     display: flex;
     justify-content: center;
     justify-items: center;
+    background-color: #bab6b6;
 }
+
 .form-container {
     width: 100%;
     max-width: 500px; /* Responsive max width */
     background: linear-gradient(135deg, #003366, #0055a4);
     padding: 20px;
+    margin: 10px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
@@ -566,3 +569,47 @@ a{
         font-size: 10px!important;
     }
 } */
+
+
+
+/* small screen search icon */
+
+/* Smaller Hamburger Icon */
+.custom-toggler {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+}
+
+/* Hide Search by Default */
+#searchContainer {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Close Button Styling */
+#closeSearch {
+    font-size: 1.2rem;
+}
+
+/* Change search button color to white */
+#searchForm button {
+    background-color: white !important;
+    color: black !important; /* Text color */
+    border: 1px solid #ccc; /* Optional: Light border */
+}
+
+/* On hover, change color slightly */
+#searchForm button:hover {
+    background-color: #f8f9fa !important; /* Light gray on hover */
+}
+#searchIcon i {
+    color: white !important;
+}
+
