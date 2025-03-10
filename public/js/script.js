@@ -80,34 +80,53 @@ document.querySelector("#searchContainer input").addEventListener("keypress", fu
         }
     }
 
-// footer upper scroller bar
+
+// flash message show 
+    setTimeout(function () {
+      let flashMessages = document.querySelectorAll('.flash-message');
+      flashMessages.forEach(msg => {
+          msg.style.opacity = '0';
+          setTimeout(() => msg.remove(), 500); // Remove after fade out
+      });
+  }, 3000); // Message disappears after 3 seconds
+  
+
+// scrolle up 
 
 document.addEventListener("DOMContentLoaded", function () {
-  let scrollTopBtn = document.getElementById("scrollTopBtn");
+  let goTopBtn = document.getElementById("goTopBtn");
 
-  // Scroll Event - Show/Hide Button
+  // Show button when user scrolls down
   window.addEventListener("scroll", function () {
-      if (window.scrollY > 300) {
-          scrollTopBtn.classList.add("show");
+      if (window.scrollY > 100) {
+          goTopBtn.classList.remove("hidden"); // Show button
       } else {
-          scrollTopBtn.classList.remove("show");
+          goTopBtn.classList.add("hidden"); // Hide button
       }
   });
 
-  // Smooth Scroll Function
-  function smoothScrollToTop() {
-      let currentPosition = window.scrollY;
-      if (currentPosition > 0) {
-          window.scrollTo(0, currentPosition - currentPosition / 10);
-          requestAnimationFrame(smoothScrollToTop);
-      }
+  // Function to smoothly scroll to the top with slow animation
+  function slowScrollToTop() {
+      let scrollPosition = window.scrollY;
+      let interval = setInterval(function () {
+          if (scrollPosition > 0) {
+              scrollPosition -= 20; // Adjust speed (Lower value = Slower Scroll)
+              window.scrollTo(0, scrollPosition);
+          } else {
+              clearInterval(interval); // Stop when reached top
+          }
+      }, 10); // Adjust interval timing (Higher value = Smoother Scroll)
   }
 
-  // Click Event - Start Smooth Scroll
-  scrollTopBtn.addEventListener("click", function () {
-      requestAnimationFrame(smoothScrollToTop);
-  });
+  // Attach function to button
+  window.scrollToTop = function () {
+      slowScrollToTop();
+
+      // Hide button after 3 seconds
+      setTimeout(() => goTopBtn.classList.add("hidden"), 3000);
+  };
 });
+
 
 
 

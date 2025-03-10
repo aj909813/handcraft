@@ -3,7 +3,7 @@
 <div class="main">
 <div class="swiper mySwiper">
   <div class="swiper-wrapper">
-    <div class="swiper-slide"> <img src="/assets/shiv.jpg"alt="shiv"></div>
+    <div class="swiper-slide"> <img src="/assets/shiv.jpg"alt="shiv"> </div>
     <div class="swiper-slide"><img src="/assets/bajyot1.jpg" alt="Image 2"></div>
     <div class="swiper-slide"><img src="/assets/poojathali.jpg" alt="Image 3"></div>
   </div>
@@ -20,13 +20,14 @@
 <h2>Murti/Statue <h6><a href="/product/murti" class="view-all">Vew all</a></h6></h2> 
 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
- 
  <% for (let Murti of allMurti) { %>
   
     <div class="card">
 
+      <a href="/product/murti/<%=Murti._id%>">
+
         <% if (Murti.image && Murti.image.length > 0) { %>
-          <img src="/<%= Murti.image[0] %>" alt="Murti Image">
+          <img src="/<%= Murti.image[0] %>" alt="Murti Image" width="300px">
           <% } else { %>
           <img src="/default.jpg" alt="Default Image" >
         <% } %>
@@ -35,12 +36,14 @@
          <h4><b><%= Murti.name%></b></h4> 
          <p><%= Murti.description%></p> 
          <a  class="view-all"href="/product/murti/<%=Murti._id%>">More</a><br>
+
+        </a>
       </div>
       <br>
     </div>
-   
+ 
   <% } %>
-  
+
 </div>
 
 <br>
@@ -53,9 +56,9 @@
  <% for (let Jula of allJula) { %>
   
     <div class="card">
-    
+     <a  href="/product/jula/<%=Jula._id%>">
         <% if (Jula.image && Jula.image.length > 0) { %>
-          <img src="/<%= Jula.image[0] %>" alt="Murti Image">
+          <img src="/<%= Jula.image[0] %>" alt="Murti Image" width="300px">
           <% } else { %>
           <img src="/default.jpg" alt="Default Image" >
         <% } %>
@@ -65,6 +68,7 @@
          <p><%= Jula.description%></p> 
          <a  class="view-all"href="/product/jula/<%=Jula._id%>">More</a><br>
       </div>
+      </a>
       <br>
     </div>
    
@@ -82,9 +86,9 @@
  <% for (let Poojathali of allPoojathali) { %>
   
     <div class="card">
-  
+      <a href="/product/poojathali/<%=Poojathali._id%>">
         <% if (Poojathali.image && Poojathali.image.length > 0) { %>
-          <img src="/<%= Poojathali.image[0] %>" alt="Poojathali Image">
+          <img src="/<%= Poojathali.image[0] %>" alt="Poojathali Image" width="300px;">
           <% } else { %>
           <img src="/default.jpg" alt="Default Image" >
         <% } %>
@@ -95,6 +99,7 @@
          <a  class="view-all"href="/product/poojathali/<%=Poojathali._id%>">More</a><br>
       </div>
       <br>
+    </a>
     </div>
    
   <% } %>
@@ -102,12 +107,7 @@
 </div>
 
 <br>
-
-<br>
-
-
        <a  class="btn btn-outline-primary view-all"href="/product/all">viewall Product categry</a>
-    
   </div><br>
 
 </div>

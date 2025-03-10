@@ -1,11 +1,11 @@
 <% layout("/layout/boilerplate") %>
     
-  <h1><%= name.toUpperCase() %> Products</h1>
+  <h3><%= name.toUpperCase() %> Products</h3>
 
- 
   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2">
     <% allProducts.forEach(product => { %> 
        <div class="card">
+         <a href="/product/<%=product.type%>/<%=product._id%>">
           <% if (product.image && product.image.length > 0) { %>
             <img src="/<%= product.image[0] %>" alt="Murti Image" width="200">
            <% } else { %>
@@ -18,6 +18,7 @@
             <a href="/product/<%=product.type%>/<%=product._id%>" class="view-all">More</a>
            </div>
          <br>
+          </a>
        </div>
        <% }); %> 
    </div>

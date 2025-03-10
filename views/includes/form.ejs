@@ -2,13 +2,13 @@
 
 <div class="form">
 <div class="form-container" id="email">
-    <br><h4 class="heading">Pleae !Submit Your Requirement</h4><br>
+    <br><h4 class="heading">Submit Your Requirement</h4><br>
     <form action="/product/submit-form" method="post"class="form-btn">
         <div>
             <input name="fullname" placeholder=" Enter your name"class="number" required></input><br><br>
             <input name ="phone" type="tel" value="+91 " id="phone" class="phone number" placeholder=" Enter your phone number" oninput="if(!this.value.startsWith('+91 ')) this.value='+91 ';" pattern="\+91 \d{10}" maxlength="14" required><br><br>
             <textarea name="requirement" placeholder=" Describe your requirement..."class="requirement" required></textarea><br><br>
-            <button type="submit" class="submit">Submit</button>  
+            <button type="submit" class="submit form-submit">Submit</button>  
         </div>
     </form>
 </div>

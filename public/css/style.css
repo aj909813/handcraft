@@ -1,5 +1,3 @@
-/* General Styles */
-
 body {
     font-family: Arial, sans-serif;
     box-sizing:border-box;
@@ -7,20 +5,107 @@ body {
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  
+
 /* Enable Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
 
+.flash-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 400px;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.success {
+    background: white;
+    border-left: 5px solid green;
+    color: black;
+}
+
+.error {
+    background: white;
+    border-left: 5px solid red;
+    color: black;
+}
+
+.icon {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    opacity: 0.6;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+
+@media (max-width: 480px) {
+    .flash-message {
+        width: 95%; 
+        max-width: 90%; 
+        font-size: 14px; 
+        padding: 10px; 
+    }
+    
+    .icon {
+        font-size: 16px;
+    }
+    
+    .close-btn {
+        font-size: 16px;
+    }
+}
 
 
 /* navbar */
 
-/* Navbar styling */
 .navbar {
-    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradient background */
+    background: linear-gradient(135deg, #1e3c72, #2a5298); 
     padding: 10px 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 /* Navbar brand/logo */
@@ -40,14 +125,14 @@ html {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ffcc00 !important; /* Yellow hover effect */
+    color: #ffcc00 !important; 
 }
 
 /* nav bar laptop Active link */
 .nav-item.active a {
-    color: #fff !important; /* Change text color */
-    border-bottom:2px solid #ff9800 !important; /* Highlight active tab */
-    font-weight: bold; /* Make text bold */
+    color: #fff !important; 
+    border-bottom:2px solid #ff9800 !important;
+    font-weight: bold;
 }
 
 /* Dropdown menu */
@@ -66,12 +151,6 @@ html {
 }
 
 /* Navbar search box */
-.form-control {
-    border-radius: 20px;
-    border: none;
-    padding: 8px 15px;
-}
-
 
 
 .btn-outline-success:hover {
@@ -147,6 +226,10 @@ html {
     justify-content: center;
     justify-items: center;
     background-color: #bab6b6;
+}
+
+.form-submit{
+    text-decoration: none;
 }
 
 .form-container {
@@ -655,37 +738,46 @@ footer {
     margin-top: 10px;
 }
 
-/* Scroll to Top Button */
+/* Style for Go to Top Button */
 
-
-/* Scroll to Top Button (Footer के अंदर Fix) */
-#scrollTopBtn {
+/* "Go to Top" Button Inside Footer */
+#goTopBtn {
     position: absolute;
-    bottom: 70px;
     right: 20px;
-    width: 40px;
-    height: 40px;
-    background-color: #ffaa00;
+    bottom: 15px;
+    background-color: orange;
     color: white;
     border: none;
+    padding: 10px 15px;
+    font-size: 16px;
     border-radius: 50%;
-    font-size: 15px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: opacity 0.3s, transform 0.3s;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hide Button Initially */
+#goTopBtn.hidden {
     opacity: 0;
-    transform: translateY(20px);
-    z-index: 1000;
+    transform: translateY(10px);
+    pointer-events: none;
 }
 
-#scrollTopBtn.show{
-    opacity: 1;
-    transform: translateY(0);
+/* Button Hover Effect */
+#goTopBtn:hover {
+    background-color: rgb(218, 178, 103);
 }
 
-#scrollTopBtn:hover {
-    background-color: #ff7700;
+/* Responsive Design */
+@media (max-width: 768px) {
+    #goTopBtn {
+        font-size: 14px;
+        padding: 8px 12px;
+        right: 10px;
+        bottom: 80px;
+    }
 }
+
+
 
 body{
     background-color: 	#F8F9FA!important;
