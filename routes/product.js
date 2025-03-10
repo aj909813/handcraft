@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
 
 const nodemailer = require("nodemailer");
 
@@ -13,7 +14,13 @@ const Dandiya = require("../models/dandiya.js");
 const Bajyot = require("../models/bajyot.js");
 const Poojathali = require("../models/poojathali.js");
 
-
+// const validTypes = {
+//     murti: require("../models/murti"),
+//     jula: require("../models/jula"),
+//     dandiya: require("../models/dandiya"),
+//     bajyot: require("../models/bajyot"),
+//     poojathali: require("../models/poojathali")
+// };
 
 router.get("/", async(req,res)=>{
     const allMurti = await Murti.find({}).limit(2);
@@ -32,7 +39,8 @@ router.get("/", async(req,res)=>{
 router.get("/search", async (req, res) => {
     let query = req.query.q;
     if (!query) {
-      return res.send("Please provide a search query");
+        req.flash("error","provide a search query");
+      return res.redirect("/search");
     }
   
     try {
@@ -108,7 +116,7 @@ router.get("/:type/:id", validateProduct,async (req, res) => {
 // viewall second
 router.get("/all", async (req, res) => {
     try {
-        const allMurti = await Murti.find({});
+        const allMurti = await Murti.find({}).limit(2);
         const allJula = await Jula.find({});
         const allPoojathali = await Poojathali.find({});
         const allBajyot = await Bajyot.find({});
@@ -162,6 +170,7 @@ router.post("/cart/add/:type/:id", async (req, res) => {
         } else {
             cart.items.push({
                 productId: product._id,
+                type: type,
                 name: product.name,
                 description: product.description, // Added description
                 image: product.image ? product.image[0] : "/default.jpg", // Added image
@@ -181,6 +190,7 @@ router.post("/cart/add/:type/:id", async (req, res) => {
 
 
 router.get("/cart", (req, res) => {
+    
     res.render("Items/cart.ejs", { cart: req.session.cart });
 });
 

@@ -6,11 +6,12 @@
     <% cart.items.forEach(item => { %>
 
     <div class="card">
-        <% if (cart.items.length === 0) { %>
+        <% if ( cart.items.length === 0) { %>
             <p>Your cart is empty.</p>
         <% } else { %>
         
                 <div class="cart-item">
+                    <a href="/product/<%= item.type %>/<%= item.productId %>">
                     <img src="<%= item.image %>" alt="<%= item.name %> Image"style="width:300px">
                     <div class="container">
                         <h4><b><%= item.name %></b></h4>
@@ -19,6 +20,7 @@
                             <button type="submit"  class="view-all" style="border:none ;">Remove</button>
                         </form>
                     </div><br>
+                  </a>
                 </div>
           <% } %>  
       
@@ -26,7 +28,6 @@
     <% }) %>
     
 </div><br>
-
 
 
 

@@ -2,7 +2,7 @@
 
 
 
-
+const mongoose = require("mongoose");
 const Murti = require("../models/murti");
 const Jula = require("../models/jula");
 const Dandiya = require("../models/dandiya");
@@ -18,27 +18,33 @@ const validTypes = {
     poojathali: Poojathali
 };
 
-// Middleware to validate product type and ID
+
 const validateProduct = async (req, res, next) => {
     const { type, id } = req.params;
 
-    // Check if type exists in validTypes
     if (!validTypes[type]) {
         req.flash("error", "Page not found");
-        return res.redirect("/product"); // Redirect if category is invalid
+        return res.redirect("/product"); 
     }
 
     try {
-        const model = validTypes[type]; // Get the correct model
-        const product = await model.findById(id); // Find product by ID
-
-        if (!product) {
-            req.flash("error", "Product not found!");
-            return res.redirect("/product"); // Redirect if product not found
+        const model = validTypes[type]; 
+        
+    
+        if (!mongoose.Types.ObjectId.isValid(id)) {
+            req.flash("error", "Invalid product ID");
+            return res.redirect("/product");
         }
 
-        req.product = product; // Attach product data to the request
-        next(); // Proceed to the next middleware or route handler
+        
+        const product = await model.findById(id);
+        if (!product) {
+            req.flash("error", "Product not found!");
+            return res.redirect("/product"); 
+        }
+
+        req.product = product; 
+        next(); 
     } catch (err) {
         console.error("Error fetching product:", err);
         req.flash("error", "Something went wrong!");

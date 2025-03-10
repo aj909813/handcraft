@@ -9,9 +9,9 @@
  <% for (let Murti of allMurti) { %>
     
     <div class="card">
-   
+      <a  href="/product/murti/<%=Murti._id%>" >
         <% if (Murti.image && Murti.image.length > 0) { %>
-          <img src="/<%= Murti.image[0] %>" alt="Murti Image">
+          <img src="/<%= Murti.image[0] %>" alt="Murti Image"width="300px">
           <% } else { %>
           <img src="/default.jpg" alt="Default Image" >
         <% } %>
@@ -19,6 +19,7 @@
         <div class="container">
          <h4><b><%= Murti.name%></b></h4> 
          <a  class="view-all"href="/product/murti/<%=Murti._id%>">More</a><br>
+        </a>
       </div>
       <br>
     </div>
@@ -36,9 +37,9 @@
  <% for (let Jula of allJula) { %>
   
     <div class="card">
-    
+      <a href="/product/jula/<%=Jula._id%>" >
         <% if (Jula.image && Jula.image.length > 0) { %>
-          <img src="/<%= Jula.image[0] %>" alt="Murti Image">
+          <img src="/<%= Jula.image[0] %>" alt="Murti Image"width="300px">
           <% } else { %>
           <img src="/default.jpg" alt="Default Image" >
         <% } %>
@@ -46,6 +47,7 @@
         <div class="container">
          <h4><b><%= Jula.name%></b></h4>  
          <a  class="view-all"href="/product/jula/<%=Jula._id%>">More</a><br>
+        </a>
       </div>
       <br>
     </div>
@@ -64,9 +66,9 @@
  <% for (let Poojathali of allPoojathali) { %>
   
     <div class="card">
-  
+      <a href="/product/poojathali/<%=Poojathali._id%>" >
         <% if (Poojathali.image && Poojathali.image.length > 0) { %>
-          <img src="/<%= Poojathali.image[0] %>" alt="Poojathali Image">
+          <img src="/<%= Poojathali.image[0] %>" alt="Poojathali Image"width="300px">
           <% } else { %>
           <img src="/default.jpg" alt="Default Image" >
         <% } %>
@@ -74,6 +76,7 @@
         <div class="container">
          <h4><b><%= Poojathali.name%></b></h4> 
          <a  class="view-all"href="/product/poojathali/<%=Poojathali._id%>">More</a><br>
+        </a>
       </div>
       <br>
     </div>
@@ -93,10 +96,10 @@
  <% for (let Dandiya of allDandiya) { %>
   
     <div class="card">
-     
+      <a  href="/product/dandiya/<%=Dandiya._id%>">
 
         <% if (Dandiya.image && Dandiya.image.length > 0) { %>
-          <img src="/<%= Dandiya.image[0] %>" alt="Dandiya Image">
+          <img src="/<%= Dandiya.image[0] %>" alt="Dandiya Image"width="300px">
           <% } else { %>
           <img src="/default.jpg" alt="Default Image" >
         <% } %>
@@ -104,10 +107,10 @@
         <div class="container">
          <h4><b><%= Dandiya.name%></b></h4> 
          <a  class="view-all"href="/product/dandiya/<%=Dandiya._id%>">More</a><br>
+        </a>
       </div>
       <br>
     </div>
-   
   <% } %>
   
 </div>
@@ -123,9 +126,9 @@
   
     <div class="card">
      
-
+      <a  href="/product/bajyot/<%=Bajyot._id%>">
         <% if (Bajyot.image && Bajyot.image.length > 0) { %>
-          <img src="/<%= Bajyot.image[0] %>" alt="Bajyot Image">
+          <img src="/<%= Bajyot.image[0] %>" alt="Bajyot Image"width="300px">
           <% } else { %>
           <img src="/default.jpg" alt="Default Image" >
         <% } %>
@@ -133,10 +136,11 @@
         <div class="container">
          <h4><b><%= Bajyot.name%></b></h4> 
          <a  class="view-all"href="/product/bajyot/<%=Bajyot._id%>">More</a><br>
+        </a>
       </div>
       <br>
     </div>
-   
+
   <% } %>
   
 </div>

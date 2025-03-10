@@ -7,18 +7,18 @@ const models = {
     jula: require("../models/jula")
 };
 
-// Middleware to validate category and attach model
+// Middleware to validate category
 const validateCategory = (req, res, next) => {
-    const name = req.params.name?.toLowerCase(); // Get category name
+    const name = req.params.name; 
 
     if (!validCategories.includes(name)) {
         req.flash("error", "Invalid Url");
-        return res.redirect("/product"); // Redirect to products page
+        return res.redirect("/product"); 
     }
 
-    req.model = models[name]; // Attach the correct model to request object
-    req.categoryName = name; // Attach category name
-    next(); // Continue to the next middleware or route handler
+    req.model = models[name]; 
+    req.categoryName = name;
+    next(); 
 };
 
 module.exports = validateCategory;

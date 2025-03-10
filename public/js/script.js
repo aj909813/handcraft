@@ -64,21 +64,22 @@ document.querySelector("#searchContainer input").addEventListener("keypress", fu
 
 
 // read more button
-    function toggleText() {
-        var shortText = document.getElementById("shortText");
-        var fullText = document.getElementById("fullText");
-        var btn = document.getElementById("readMoreBtn");
+function toggleReadMore() {
+  let moreText = document.getElementById("more-text");
+  let dots = document.getElementById("dots");
+  let btnText = document.getElementById("readMoreBtn");
 
-        if (fullText.style.display === "none") {
-            fullText.style.display = "block";
-            shortText.style.display = "none";
-            btn.innerText = "Read Less";
-        } else {
-            fullText.style.display = "none";
-            shortText.style.display = "block";
-            btn.innerText = "Read More";
-        }
-    }
+  if (moreText.classList.contains("hidden")) {
+      moreText.classList.remove("hidden");
+      dots.style.display = "none";
+      btnText.textContent = "Read Less";
+  } else {
+      moreText.classList.add("hidden");
+      dots.style.display = "inline";
+      btnText.textContent = "Read More";
+  }
+}
+
 
 
 // flash message show 
@@ -86,9 +87,9 @@ document.querySelector("#searchContainer input").addEventListener("keypress", fu
       let flashMessages = document.querySelectorAll('.flash-message');
       flashMessages.forEach(msg => {
           msg.style.opacity = '0';
-          setTimeout(() => msg.remove(), 500); // Remove after fade out
+          setTimeout(() => msg.remove(), 500); 
       });
-  }, 3000); // Message disappears after 3 seconds
+  }, 3000); 
   
 
 // scrolle up 
@@ -96,45 +97,30 @@ document.querySelector("#searchContainer input").addEventListener("keypress", fu
 document.addEventListener("DOMContentLoaded", function () {
   let goTopBtn = document.getElementById("goTopBtn");
 
-  // Show button when user scrolls down
   window.addEventListener("scroll", function () {
       if (window.scrollY > 100) {
-          goTopBtn.classList.remove("hidden"); // Show button
+          goTopBtn.classList.remove("hidden"); 
       } else {
-          goTopBtn.classList.add("hidden"); // Hide button
+          goTopBtn.classList.add("hidden"); 
       }
   });
 
-  // Function to smoothly scroll to the top with slow animation
   function slowScrollToTop() {
       let scrollPosition = window.scrollY;
-      let interval = setInterval(function () {
-          if (scrollPosition > 0) {
-              scrollPosition -= 20; // Adjust speed (Lower value = Slower Scroll)
-              window.scrollTo(0, scrollPosition);
-          } else {
-              clearInterval(interval); // Stop when reached top
-          }
-      }, 10); // Adjust interval timing (Higher value = Smoother Scroll)
-  }
 
-  // Attach function to button
+      function scrollStep() {
+          if (scrollPosition > 0) {
+              scrollPosition -= Math.max(10, scrollPosition / 10); 
+              window.scrollTo(0, scrollPosition);
+              requestAnimationFrame(scrollStep);
+          }
+      }
+
+      requestAnimationFrame(scrollStep);
+  }
   window.scrollToTop = function () {
       slowScrollToTop();
 
-      // Hide button after 3 seconds
       setTimeout(() => goTopBtn.classList.add("hidden"), 3000);
   };
 });
-
-
-
-
-
-
-
-
-
-
-
-
