@@ -66,7 +66,7 @@ router.get("/search", async (req, res) => {
   
 // call route 
   router.get("/call", (req, res) => {
-    res.redirect('tel:+919828677190');
+    res.redirect('tel:+919828555223');
        });
 
 
